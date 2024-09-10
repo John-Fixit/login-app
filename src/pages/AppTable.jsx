@@ -84,32 +84,35 @@ const AppTable = () => {
         <h1 className="font-semibold text-lg">App List</h1>
         <div className="flex gap-3 justify-between ">
           <button
-            className="header_btnStyle bg-[#00bcc2] rounded text-white font-semibold py-[7px] leading-[19.5px] mx-2 my-1 md:my-0 px-[16px] uppercase"
+            className="header_btnStyle bg-[#00bcc2] rounded text-white font-semibold py-[7px] leading-[19.5px] mx-2 my-1 md:my-0 px-[16px] font-roboto"
             onClick={handleOpenDrawer}
           >
             Create App
           </button>
         </div>
       </div>
-      <ConfigProvider
-        theme={{
-          components: {
-            Table: {
-              headerBg: "#CCC6FF24",
-              headerColor: "",
-              borderColor: "#f0f0f0",
-              headerBorderRadius: "0px",
-              rowSelectedHoverBg: "#f0f0f0",
-              rowSelectedBg: "#fafafa",
-            },
-          },
-          token: {
-            colorPrimary: "#733534",
-          },
-        }}
-      >
-        <Table columns={columns} dataSource={data} />;
-      </ConfigProvider>
+      <div className="p-3 shadow rounded-md">
+          <ConfigProvider
+            theme={{
+              components: {
+                Table: {
+                  headerBg: "rgb(244 244 245)",
+                  // headerColor: "",
+                  borderColor: "#fff",
+                  headerBorderRadius: "8px",
+                  // rowSelectedHoverBg: "#f0f0f0",
+                  // rowSelectedBg: "#fafafa",
+
+                },
+              },
+              token: {
+                // colorPrimary: "#272c34",
+              },
+            }}
+          >
+            <Table columns={columns} dataSource={data} />;
+          </ConfigProvider>
+      </div>
 
       <ExpandedDrawer isOpen={openDrawer} onClose={handleCloseDrawer}>
         <CreateAppForm handleCloseDrawer={handleCloseDrawer} />
