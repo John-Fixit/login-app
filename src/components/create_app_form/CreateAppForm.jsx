@@ -140,7 +140,6 @@ export default function CreateAppForm({handleCloseDrawer}){
             </label>
             <Select
               value={getValues("return_data")}
-              showSearch
               size={"large"}
               placeholder="Select Login return data"
               className="w-full"
@@ -195,13 +194,11 @@ export default function CreateAppForm({handleCloseDrawer}){
             </label>
             <Select
               value={getValues("staff_permission")}
-              showSearch
               size={"large"}
               placeholder="Select staff permission"
               className="w-full"
               optionFilterProp="label"
               status={errors.staff_permission ? "error" : ""}
-              mode="multiple"
               
               {...register("staff_permission", {
                 required: "Bank Name is required",
@@ -235,6 +232,56 @@ export default function CreateAppForm({handleCloseDrawer}){
               {errors.staff_permission && errors.staff_permission.message}
             </small>
           </div>
+          {
+            getValues("staff_permission") && (
+          <div className="mb-3">
+            <label htmlFor="" className="font-[400] text-[14px] capitalize">
+              {getValues("staff_permission")}
+            </label>
+            <Select
+              value={getValues("staff_permissions")}
+              showSearch
+              size={"large"}
+              placeholder="Select staff permission"
+              className="w-full"
+              optionFilterProp="label"
+              status={errors.staff_permissions ? "error" : ""}
+              mode="multiple"
+              
+              {...register("staff_permissions", {
+                required: "Bank Name is required",
+              })}
+              onChange={(value)=>handleChange(value, "staff_permissions")}
+              options={[
+                    // {
+                    //     label: "STAFF", value: "staff"
+                    // },
+                    // {
+                    //     label: "DEPARTMENT", value: "department"
+                    // },
+                    // {
+                    //     label: "DESIGNATION", value: "designation"
+                    // },
+                    // {
+                    //     label: "UNIT", value: "unit"
+                    // },
+                    // {
+                    //     label: "REGION", value: "region"
+                    // },
+                    // {
+                    //     label: "DIRECTORATE", value: "directorate"
+                    // },
+                    // {
+                    //     label: "GRADE", value: "grade"
+                    // },
+              ]}
+            />
+            <small style={{ fontSize: "13px" }} className="text-red-500">
+              {errors.staff_permissions && errors.staff_permissions.message}
+            </small>
+          </div>
+            )
+          }
         
           <div className="mb-3 flex flex-col col-span-2">
             <label htmlFor="" className="font-[400] text-[14px]">
