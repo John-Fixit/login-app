@@ -115,7 +115,7 @@ export default function CreateAppForm({handleCloseDrawer}){
         </p>
         <form action="" onSubmit={handleSubmit(onsubmit)}>
         <div className="mb-3">
-            <label htmlFor="" className="font-[400] text-[16px]">
+            <label htmlFor="" className="font-[400] text-[14px]">
               Name
             </label>
             <Input
@@ -135,7 +135,7 @@ export default function CreateAppForm({handleCloseDrawer}){
             </small>
           </div>
           <div className="mb-3">
-            <label htmlFor="" className="font-[400] text-[16px]">
+            <label htmlFor="" className="font-[400] text-[14px]">
               Login Return Data
             </label>
             <Select
@@ -190,7 +190,7 @@ export default function CreateAppForm({handleCloseDrawer}){
             </small>
           </div>
           <div className="mb-3">
-            <label htmlFor="" className="font-[400] text-[16px]">
+            <label htmlFor="" className="font-[400] text-[14px]">
               Staff Permission
             </label>
             <Select
@@ -237,7 +237,7 @@ export default function CreateAppForm({handleCloseDrawer}){
           </div>
         
           <div className="mb-3 flex flex-col col-span-2">
-            <label htmlFor="" className="font-[400] text-[16px]">
+            <label htmlFor="" className="font-[400] text-[14px]">
               App Description
             </label>
             <Input.TextArea
@@ -254,7 +254,7 @@ export default function CreateAppForm({handleCloseDrawer}){
               className={"w-full"}
               loading={isLoading}
             >
-              Create
+              Create App
             </CustomButton>
           </div>
         </form>
